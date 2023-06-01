@@ -31,8 +31,6 @@ const updateImage = (index) => {
   context.drawImage(img, 0, 0);
 };
 
-// window.addEventListener("DOMContentLoaded", preloadImages, true);
-
 window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
   const maxScrollTop = canvasContainer.scrollHeight - window.innerHeight;
@@ -42,9 +40,7 @@ window.addEventListener("scroll", () => {
     Math.ceil(scrollFraction * frameCount)
   );
 
-  if (true) {
-    requestAnimationFrame(() => updateImage(frameIndex + 1));
-  }
+  requestAnimationFrame(() => updateImage(frameIndex + 1));
 });
 
 preloadImages();
