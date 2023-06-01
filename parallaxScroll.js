@@ -9,12 +9,12 @@ const frameCount = 113; // Total amount of images
 const currentFrame = (index) =>
   `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`;
 
-// const preloadImages = () => {
-//   for (let i = 1; i < frameCount; i++) {
-//     const img = new Image();
-//     img.src = currentFrame(i);
-//   }
-// };
+const preloadImages = () => {
+  for (let i = 1; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+  }
+};
 
 const img = new Image();
 img.src = currentFrame(1);
@@ -45,4 +45,4 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// preloadImages();
+preloadImages();
