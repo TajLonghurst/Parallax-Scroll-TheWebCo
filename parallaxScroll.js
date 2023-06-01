@@ -10,7 +10,7 @@ const currentFrame = (index) => {
 };
 
 const preloadImages = () => {
-  for (let i = 1; i < frameCount; i++) {
+  for (let i = 1; i <= frameCount; i++) {
     const img = new Image();
     img.src = currentFrame(i);
   }
@@ -31,7 +31,7 @@ const updateImage = (index) => {
   context.drawImage(img, 0, 0);
 };
 
-window.addEventListener("DOMContentLoaded", preloadImages, true);
+// window.addEventListener("DOMContentLoaded", preloadImages, true);
 
 window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
@@ -46,3 +46,5 @@ window.addEventListener("scroll", () => {
     requestAnimationFrame(() => updateImage(frameIndex + 1));
   }
 });
+
+preloadImages();
