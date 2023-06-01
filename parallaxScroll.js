@@ -1,22 +1,27 @@
 const html = document.documentElement;
 const canvas = document.getElementById("venue-scrolling");
 const context = canvas.getContext("2d");
+// const rect = canvas.getBoundingClientRect();
+const canvasContainer = document.getElementById("venue-container");
 
-const frameCount = 113;
+const frameCount = 113; // Total amount of images
+
 const currentFrame = (index) =>
   `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`;
 
-const preloadImages = () => {
-  for (let i = 1; i < frameCount; i++) {
-    const img = new Image();
-    img.src = currentFrame(i);
-  }
-};
+// const preloadImages = () => {
+//   for (let i = 1; i < frameCount; i++) {
+//     const img = new Image();
+//     img.src = currentFrame(i);
+//   }
+// };
 
 const img = new Image();
 img.src = currentFrame(1);
-canvas.width = 1158;
-canvas.height = 770;
+
+canvas.width = 1920;
+canvas.height = 1080;
+
 img.onload = function () {
   context.drawImage(img, 0, 0);
 };
@@ -28,14 +33,16 @@ const updateImage = (index) => {
 
 window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
-  const maxScrollTop = html.scrollHeight - window.innerHeight;
+  const maxScrollTop = canvasContainer.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / maxScrollTop;
   const frameIndex = Math.min(
     frameCount - 1,
     Math.ceil(scrollFraction * frameCount)
   );
 
-  requestAnimationFrame(() => updateImage(frameIndex + 1));
+  if (true) {
+    requestAnimationFrame(() => updateImage(frameIndex + 1));
+  }
 });
 
-preloadImages();
+// preloadImages();
