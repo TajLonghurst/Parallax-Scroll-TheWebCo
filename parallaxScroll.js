@@ -5,8 +5,9 @@ const canvasContainer = document.getElementById("venue-container");
 
 const frameCount = 113; // Total amount of images
 
-const currentFrame = (index) =>
-  `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`; ///LRT_0001
+const currentFrame = (index) => {
+  return `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`; ///LRT_0001
+};
 
 const preloadImages = () => {
   for (let i = 1; i < frameCount; i++) {
