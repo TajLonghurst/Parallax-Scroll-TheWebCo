@@ -30,7 +30,7 @@ const updateImage = (index) => {
   context.drawImage(img, 0, 0);
 };
 
-// this.addEventListener("DOMContentLoaded", preloadImages, true);
+this.addEventListener("DOMContentLoaded", preloadImages, true);
 
 window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
