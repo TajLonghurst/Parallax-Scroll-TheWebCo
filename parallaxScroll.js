@@ -1,7 +1,6 @@
 const html = document.documentElement;
 const canvas = document.getElementById("venue-scrolling");
 const context = canvas.getContext("2d");
-// const rect = canvas.getBoundingClientRect();
 const canvasContainer = document.getElementById("venue-container");
 
 const frameCount = 113; // Total amount of images
@@ -31,6 +30,8 @@ const updateImage = (index) => {
   context.drawImage(img, 0, 0);
 };
 
+this.addEventListener("DOMContentLoaded", preloadImages, true);
+
 window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
   const maxScrollTop = canvasContainer.scrollHeight - window.innerHeight;
@@ -45,4 +46,4 @@ window.addEventListener("scroll", () => {
   }
 });
 
-preloadImages();
+// preloadImages();
