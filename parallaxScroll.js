@@ -6,7 +6,7 @@ const canvasContainer = document.getElementById("venue-container");
 const frameCount = 113; // Total amount of images
 
 const currentFrame = (index) =>
-  `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`;
+  `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`; ///LRT_0001
 
 const preloadImages = () => {
   for (let i = 1; i < frameCount; i++) {
@@ -30,7 +30,7 @@ const updateImage = (index) => {
   context.drawImage(img, 0, 0);
 };
 
-this.addEventListener("DOMContentLoaded", preloadImages, true);
+window.addEventListener("DOMContentLoaded", preloadImages, true);
 
 window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
