@@ -3,7 +3,7 @@ const canvas = document.getElementById("venue-scrolling");
 const context = canvas.getContext("2d");
 const canvasContainer = document.getElementById("venue-container");
 
-const frameCount = 113; // Total amount of images
+const frameCount = 125; // Total amount of images
 
 const currentFrame = (index) => {
   return `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`; ///LRT_0001

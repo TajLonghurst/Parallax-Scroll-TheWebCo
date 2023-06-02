@@ -34,5 +34,5 @@ body {
   top: 0%;
   width: 100vw;
   height: 100vh;
-  object-fit: fill;
+  object-fit: cover;
 }
