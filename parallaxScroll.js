@@ -9,13 +9,6 @@ const currentFrame = (index) => {
   return `venue-images/LRT_${index.toString().padStart(4, "0")}.jpg`; ///LRT_0001
 };
 
-const preloadImages = () => {
-  for (let i = 1; i <= frameCount; i++) {
-    const img = new Image();
-    img.src = currentFrame(i);
-  }
-};
-
 const img = new Image();
 img.src = currentFrame(1);
 
@@ -42,5 +35,13 @@ window.addEventListener("scroll", () => {
 
   requestAnimationFrame(() => updateImage(frameIndex + 1));
 });
+
+
+const preloadImages = () => {
+    for (let i = 1; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+    }
+}
 
 preloadImages();
